@@ -35,6 +35,18 @@ function buildhtml () {										//Copy index.html to dir "dev"
         .pipe(browserSync.stream());
 }
 
+
+function buildhtmls () {										//Copy index.html to dir "dev"
+    return gulp.src('./src/html/*.html')
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream());
+}
+function buildJson () {
+    return gulp.src('./src/*.json')
+        .pipe(gulp.dest('dist/data'))
+        .pipe(browserSync.stream());
+
+}
 function fonts () {											//Copy fonts to dir "dev"
     return gulp.src(fontsFiles)
         .pipe(gulp.dest('./dist/fonts'))
@@ -48,7 +60,7 @@ function scripts () {
         .pipe(terser({											//terser
             toplevel: true
         }))														//minify js
-        .pipe(concat('all.js'))									//concat all js files
+        // .pipe(concat('all.js'))									//concat all js files
         .pipe(rename(function (path) {							// function of rename extname for .css
             path.extname = ".min.js";
         }))
@@ -85,14 +97,17 @@ function watch() {
     gulp.watch('./src/scss/**/*.scss', forSass);				// ставим watcher для слежения за изменениями в файлах
     gulp.watch('./src/js/**/*.js', scripts);
     gulp.watch('./src/*.html', buildhtml);
+    gulp.watch('./src/html/*.html', buildhtmls);
 }
 
 gulp.task('cleandev', cleandev);
+gulp.task('buildJson',buildJson)
 gulp.task('img', img);
 gulp.task('buildHtml', buildhtml);
+gulp.task('buildHtmls', buildhtmls);
 gulp.task('scripts', scripts);
 gulp.task('sass', forSass);
 gulp.task('watch', watch);
 gulp.task('fonts', fonts);
-gulp.task('build', gulp.series('cleandev', gulp.series(img, buildhtml, fonts, scripts, forSass)));
+gulp.task('build', gulp.series('cleandev', gulp.series(buildJson,img, buildhtml, buildhtmls, fonts, scripts, forSass)));
 gulp.task('dev', gulp.series('build', watch));

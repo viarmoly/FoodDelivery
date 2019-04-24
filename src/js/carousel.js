@@ -4,7 +4,7 @@ var slideIndex = 0;
 carousel();
 
 function carousel() {
-    var i;
+   var i;
     var x = document.getElementsByClassName("mySlides");
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
@@ -33,7 +33,11 @@ function showSlides(n) {
     dots[slideIndex-1].className += " active";
 }
 
-
+Array.from(document.querySelectorAll('a.next')).forEach(cls => {
+    cls.addEventListener('click', function() {
+        showSlides(slideIndex += 1);
+    });
+});
 
 Array.from(document.querySelectorAll('a.prev')).forEach(cls => {
     cls.addEventListener('click', function() {
@@ -41,32 +45,4 @@ Array.from(document.querySelectorAll('a.prev')).forEach(cls => {
     });
 });
 
-Array.from(document.querySelectorAll('a.next')).forEach(cls => {
-    cls.addEventListener('click', function() {
-        showSlides(slideIndex += 1);
-    });
-});
 
-Array.from(document.querySelectorAll('span.dot1')).forEach(cls => {
-    cls.addEventListener('click', function() {
-        showSlides(slideIndex = 1);
-    });
-});
-
-Array.from(document.querySelectorAll('span.dot2')).forEach(cls => {
-    cls.addEventListener('click', function() {
-        showSlides(slideIndex = 2);
-    });
-});
-
-Array.from(document.querySelectorAll('span.dot3')).forEach(cls => {
-    cls.addEventListener('click', function() {
-        showSlides(slideIndex = 3);
-    });
-});
-
-Array.from(document.querySelectorAll('span.dot4')).forEach(cls => {
-    cls.addEventListener('click', function() {
-        showSlides(slideIndex = 4);
-    });
-});

@@ -1,0 +1,77 @@
+
+.container-menu-item{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 100px;
+  justify-content: center;
+
+}
+.menu-title{
+  font-size: 20px;
+  padding: 20px 20px 0;
+  margin-bottom: 10px;
+  color: black;
+}
+.link-menu-item{
+  text-decoration: none;
+}
+
+.menu-item{
+  width: 330px;
+  height: 500px;
+  margin: 20px 30px;
+  box-shadow: 0px 20px 30px -10px rgba(0 ,0,0, .3);
+  border-radius: 8px;
+  transition: .2s all;
+}
+
+.menu-item:hover{
+  transform:scale(1.03);
+  .menu-title{
+    color: #91b306;
+  }
+}
+.menu-item-photo{
+  width: 330px;
+  height:270px;
+  object-fit: cover
+}
+
+.menu-item-title{
+  font-size: 18px;
+  line-height: 24px;
+}
+.menu-item-weight{
+  color: #b1b1b1;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 10px;
+  padding: 0 20px 0 20px;
+}
+
+.menu-item-ingredients{
+  font-size: 14px;
+  line-height: 18px;
+  color: gray;
+  height: 54px;
+  overflow: hidden;
+  font-family: inherit;
+  padding: 0 20px 0 20px;
+  margin-bottom: 0;
+}
+
+.menu-item-price{
+  font-size: 24px;
+  color: #000;
+  font-weight: bold;
+  padding: 0 20px 0 20px;
+  margin-top: 0;
+}
+
+.menu-title:hover{
+  color: #91b306;
+}

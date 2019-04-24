@@ -67,7 +67,7 @@ nav ul li {
   display: inline-block;
   float: left;
   background-color: #000;
-  border-left: 1px solid white;
+  //border-left: 1px solid white;
 }
 
 nav ul li ul li {
@@ -141,10 +141,10 @@ li > a:only-child:after {
   content: '';
 }
 
-nav ul li:last-child{
-  border-right: 1px solid white;
-  margin-right: 30px;
-}
+//nav ul li:last-child{
+//  //border-right: 1px solid white;
+//  margin-right: 30px;
+//}
 
 
 /* Media Queries
