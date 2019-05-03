@@ -11,6 +11,13 @@ const terser = require('gulp-terser');						//minify for js
 const autoprefixer = require('gulp-autoprefixer');			//cross-browser compatibility css
 const babel = require('gulp-babel');						//cross-browser compatibility js
 
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const babelify = require("babelify");
+const merge = require('merge-stream');
+const glob = require('glob');
+const path = require('path');
+
 const fontsFiles = [										//составляем массив переменних с все файлов шрифтов, для переноса в папку разработки
     './src/fonts/**.eot',
     './src/fonts/**.ttf',
@@ -52,20 +59,41 @@ function fonts () {											//Copy fonts to dir "dev"
         .pipe(gulp.dest('./dist/fonts'))
 }
 
-function scripts () {
-    return gulp.src('src/js/*.js')
-        .pipe(babel({											//babel
-            presets: ['@babel/env']
-        }))
-        .pipe(terser({											//terser
-            toplevel: true
-        }))														//minify js
-        // .pipe(concat('all.js'))									//concat all js files
-        .pipe(rename(function (path) {							// function of rename extname for .css
-            path.extname = ".min.js";
-        }))
-        .pipe(gulp.dest('./dist/js'))
-        .pipe(browserSync.stream());
+// function scripts () {
+//     return gulp.src('src/js/*.js')
+//         .pipe(babel({											//babel
+//             presets: ['@babel/env']
+//         }))
+//         .pipe(terser({											//terser
+//             toplevel: true
+//         }))														//minify js
+//         // .pipe(concat('all.js'))									//concat all js files
+//         .pipe(rename(function (path) {							// function of rename extname for .css
+//             path.extname = ".min.js";
+//         }))
+//         .pipe(gulp.dest('./dist/js'))
+//         .pipe(browserSync.stream());
+// }
+
+function scripts() {
+    const files = glob.sync('./src/js/*.js');
+
+    return merge(files.map(file => {
+        return browserify({
+            entries: file,
+            debug: true
+        })
+            .transform(babelify.configure({
+                presets: ['@babel/preset-env']
+            }))
+            .bundle()
+            .on('error', function (err) {
+                console.log(`Error: ${ err.message }`);
+                this.emit('end');
+            })
+            .pipe(source(path.basename(file, '.js') + '.min.js'))
+            .pipe(gulp.dest('dist/js'));
+    }));
 }
 
 function forSass() {

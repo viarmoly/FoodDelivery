@@ -141,6 +141,7 @@ li > a:only-child:after {
   content: '';
 }
 
+
 //nav ul li:last-child{
 //  //border-right: 1px solid white;
 //  margin-right: 30px;
@@ -176,6 +177,22 @@ li > a:only-child:after {
   nav ul li {
     border-left: none;
     border-top: 1px solid white;
+  }
+
+  .header-cart a {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: right;
+    float: none;
+    height: 0;
+    position: relative;
+    top: -50px;
+  }
+
+  .header-cart a hover{
+    color: white;
+    text-align: right;
   }
 
   .toggle + a,

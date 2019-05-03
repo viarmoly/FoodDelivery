@@ -1,0 +1,41 @@
+
+.container-combo-item{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: 50px;
+  max-width: 300px;
+  width: calc(50% - 60px);
+  margin: 0 30px 40px;
+
+}
+
+.combo-container{
+  display:flex;
+  justify-content: center;
+
+}
+
+.combo-info{
+  margin-top: 90px;
+}
+
+.combo-header{
+  text-align: center;
+}
+
+.combo-menu-item{
+    width: 300px;
+    height: 300px;
+    margin: 20px 30px;
+    box-shadow: 0px 20px 30px -10px rgba(0 ,0,0, .3);
+    border-radius: 8px;
+    transition: .2s all;
+}
+
+.combo-menu-item-photo{
+  width: 300px;
+  height:150px;
+  object-fit: cover
+}

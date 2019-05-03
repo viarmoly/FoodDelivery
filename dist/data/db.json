@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "cuisine": "italian",
     "type": "salad",
     "name": "Панцанела с красными перцами",
@@ -11,10 +12,11 @@
       "багет"
     ],
     "weight": " 240 г",
-    "price": "135 грн",
+    "price": 135,
     "photo": "../img/pancenella.png"
   },
   {
+    "id": 2,
     "cuisine": "italian",
     "type": "salad",
     "name": "Моцарелла с рукколой",
@@ -24,10 +26,11 @@
       "рукола"
     ],
     "weight": " 260 г",
-    "price": "100 грн",
+    "price": 100,
     "photo": "./img/mozarella_rukola.png"
   },
   {
+    "id": 3,
     "cuisine": "ukrainian",
     "type": "salad",
     "name": "Киевский салат",
@@ -40,10 +43,11 @@
       "грецкий орех"
     ],
     "weight": " 250 г",
-    "price": "120 грн",
+    "price": 120,
     "photo": "../img/kievskyi_salad.png"
   },
   {
+    "id": 4,
     "cuisine": "ukrainian",
     "type": "salad",
     "name": "Овощной салат",
@@ -55,15 +59,16 @@
       "зеленный лук"
     ],
     "weight": " 300 г",
-    "price": "100 грн",
+    "price": 100,
     "photo": "../img/ovoschnoi_salat.png"
   },
   {
+    "id": 5,
     "cuisine": "ukrainian",
     "type": "salad",
     "name": "Салат с курицей и грибами",
     "ingredients": [
-      "Куриное филе",
+      "Филе",
       "сухарики",
       "чеснок",
       "твердый сыр",
@@ -71,10 +76,11 @@
       "майонез"
     ],
     "weight": " 275 г",
-    "price": "145 грн",
+    "price": 145,
     "photo": "../img/chiken_salat.png"
   },
   {
+    "id": 6,
     "cuisine": "asian",
     "type": "salad",
     "name": "Тайский салат с курицей и грейпфрутом",
@@ -87,10 +93,11 @@
       "лайм"
     ],
     "weight": " 250 г",
-    "price": "150 грн",
+    "price": 150,
     "photo": "../img/grepfruit_salat.png"
   },
   {
+    "id": 7,
     "cuisine": "asian",
     "type": "salad",
     "name": "Кайсо",
@@ -107,10 +114,11 @@
       "лайм"
     ],
     "weight": " 240 г",
-    "price": "135 грн",
+    "price": 135,
     "photo": "../img/caiso.png"
   },
   {
+    "id": 8,
     "cuisine": "asian",
     "type": "salad",
     "name": "Холодный салат с говядиной",
@@ -123,10 +131,11 @@
       "кешью"
     ],
     "weight": " 275 г",
-    "price": "140 грн",
+    "price": 140,
     "photo": "./img/cold_salat.png"
   },
   {
+    "id": 9,
     "cuisine": "italian",
     "type": "salad",
     "name": "Салат из помидоров черри с креветками",
@@ -138,10 +147,11 @@
       "перец"
     ],
     "weight": " 280 г",
-    "price": "155 грн",
+    "price": 155,
     "photo": "../img/shrimps_salad.png"
   },
   {
+    "id": 10,
     "cuisine": "ukrainian",
     "type": "soup",
     "name": "Борщ",
@@ -153,10 +163,11 @@
       "картошка"
     ],
     "weight": " 300 г",
-    "price": "90 грн",
+    "price": 90,
     "photo": "../img/borsch.png"
   },
   {
+    "id": 11,
     "cuisine": "ukrainian",
     "type": "soup",
     "name": "Суп гороховый",
@@ -168,10 +179,11 @@
       "петрушка"
     ],
     "weight": " 350 г",
-    "price": "100 грн",
+    "price": 100,
     "photo": "../img/soup_goroh.png"
   },
   {
+    "id": 12,
     "cuisine": "ukrainian",
     "type": "soup",
     "name": "Окрошка",
@@ -186,10 +198,11 @@
       "кинза"
     ],
     "weight": " 300 г",
-    "price": "100 грн",
+    "price": 100,
     "photo": "../img/okroshka.png"
   },
   {
+    "id": 13,
     "cuisine": "asian",
     "type": "soup",
     "name": "Том кха гай",
@@ -203,10 +216,11 @@
       "кинза"
     ],
     "weight": " 300 г",
-    "price": "90 грн",
+    "price": 90,
     "photo": "../img/tom_kha.png"
   },
   {
+    "id": 14,
     "cuisine": "asian",
     "type": "soup",
     "name": "Рамен с утиной грудкой",
@@ -220,10 +234,11 @@
       "лапша рамен"
     ],
     "weight": " 350 г",
-    "price": "100 грн",
+    "price": 100,
     "photo": "../img/utinaya_grudka.png"
   },
   {
+    "id": 15,
     "cuisine": "asian",
     "type": "soup",
     "name": "Унаги-янагава",
@@ -237,10 +252,11 @@
       "стружка тунца"
     ],
     "weight": " 300 г",
-    "price": "100 грн",
+    "price": 100,
     "photo": "../img/unagi.png"
   },
   {
+    "id": 16,
     "cuisine": "italian",
     "type": "soup",
     "name": "Минестроне",
@@ -254,10 +270,11 @@
       "сыр пармезан"
     ],
     "weight": " 300 г",
-    "price": "90 грн",
+    "price": 90,
     "photo": "../img/ministrone.png"
   },
   {
+    "id": 17,
     "cuisine": "italian",
     "type": "soup",
     "name": "Сырный крем-суп",
@@ -269,10 +286,11 @@
       "мускатный орех"
     ],
     "weight": " 350 г",
-    "price": "100 грн",
+    "price": 100,
     "photo": "../img/surnui_krem.png"
   },
   {
+    "id": 18,
     "cuisine": "italian",
     "type": "soup",
     "name": "Грибной суп",
@@ -284,10 +302,11 @@
       "куриный бульон"
     ],
     "weight": " 300 г",
-    "price": "120 грн",
+    "price": 120,
     "photo": "../img/gribnoj-krem-sup.png"
   },
   {
+    "id": 19,
     "cuisine": "ukrainian",
     "type": "hotmeals",
     "name": "Жаркое из свинины и картофеля",
@@ -300,10 +319,11 @@
       "морковь"
     ],
     "weight": " 300 г",
-    "price": "150 грн",
+    "price": 150,
     "photo": "../img/zarkoe.png"
   },
   {
+    "id": 20,
     "cuisine": "ukrainian",
     "type": "hotmeals",
     "name": "Вареники с мясом",
@@ -312,10 +332,11 @@
       "лук"
     ],
     "weight": " 300 г",
-    "price": "160 грн",
+    "price": 160,
     "photo": "../img/vareniki.png"
   },
   {
+    "id": 21,
     "cuisine": "ukrainian",
     "type": "hotmeals",
     "name": "Деруны с творогом",
@@ -326,10 +347,11 @@
       "чеснок"
     ],
     "weight": " 300 г",
-    "price": "160 грн",
+    "price": 160,
     "photo": "../img/derunu.png"
   },
   {
+    "id": 22,
     "cuisine": "ukrainian",
     "type": "hotmeals",
     "name": "Котлеты по‑киевски",
@@ -341,10 +363,11 @@
       "чеснок"
     ],
     "weight": " 500 г",
-    "price": "250 грн",
+    "price": 250,
     "photo": "../img/cotleta_po_kievsky.png"
   },
   {
+    "id": 23,
     "cuisine": "asian",
     "type": "hotmeals",
     "name": "Курица терияки",
@@ -356,10 +379,11 @@
       "длиннозерный рис"
     ],
     "weight": " 500 г",
-    "price": "250 грн",
+    "price": 250,
     "photo": "../img/teriaki.png"
   },
   {
+    "id": 24,
     "cuisine": "asian",
     "type": "hotmeals",
     "name": "Плов по‑японски",
@@ -373,10 +397,11 @@
       "огурцы"
     ],
     "weight": " 350 г",
-    "price": "200 грн",
+    "price": 200,
     "photo": "../img/tiahan.png"
   },
   {
+    "id": 25,
     "cuisine": "asian",
     "type": "hotmeals",
     "name": "Жареный рис с курицей",
@@ -390,10 +415,11 @@
       "цедра лайма"
     ],
     "weight": " 400 г",
-    "price": "220 грн",
+    "price": 220,
     "photo": "../img/chicken-fried-rice.png"
   },
   {
+    "id": 26,
     "cuisine": "asian",
     "type": "hotmeals",
     "name": "Пад-тай с лаймом",
@@ -408,10 +434,11 @@
       "яйцо"
     ],
     "weight": " 400 г",
-    "price": "200 грн",
+    "price": 200,
     "photo": "../img/padtai.png"
   },
   {
+    "id": 27,
     "cuisine": "italian",
     "type": "hotmeals",
     "name": "Лазанья",
@@ -421,10 +448,11 @@
       "твердый сыр"
     ],
     "weight": " 400 г",
-    "price": "200 грн",
+    "price": 200,
     "photo": "../img/lazanya-s-farshem.png"
   },
   {
+    "id": 28,
     "cuisine": "italian",
     "type": "hotmeals",
     "name": "Спагетти карбонара",
@@ -437,10 +465,11 @@
       "яйцо"
     ],
     "weight": " 330 г",
-    "price": "210 грн",
+    "price": 210,
     "photo": "../img/carbonara.png"
   },
   {
+    "id": 29,
     "cuisine": "italian",
     "type": "hotmeals",
     "name": "Феттучини ",
@@ -454,10 +483,11 @@
       "зелень"
     ],
     "weight": "360 г",
-    "price": "235 грн",
+    "price": 235,
     "photo": "../img/fettuchini.png"
   },
   {
+    "id": 30,
     "cuisine": "italian",
     "type": "hotmeals",
     "name": "Конкильони с фаршем",
@@ -470,10 +500,11 @@
       "сушеная зелень"
     ],
     "weight": "360 г",
-    "price": "235 грн",
+    "price": 235,
     "photo": "../img/conciloni.png"
   },
   {
+    "id": 31,
     "cuisine": "none",
     "type": "drinks",
     "name": "Borjomi",
@@ -481,10 +512,11 @@
       "Газированая минеральная вода"
     ],
     "weight": "0.5 л",
-    "price": "35 грн",
+    "price": 35,
     "photo": "../img/borjomi.png"
   },
   {
+    "id": 32,
     "cuisine": "none",
     "type": "drinks",
     "name": "Моршинская",
@@ -492,10 +524,11 @@
       "Газированая минеральная вода"
     ],
     "weight": "0.5 л",
-    "price": "25 грн",
+    "price": 25,
     "photo": "../img/morshinskaya-gazirovannaya.png"
   },
   {
+    "id": 33,
     "cuisine": "none",
     "type": "drinks",
     "name": "Моршинская",
@@ -503,10 +536,11 @@
       "Негазированая минеральная вода"
     ],
     "weight": "0.5 л",
-    "price": "25 грн",
+    "price": 25,
     "photo": "../img/morshinskaya-negazirovannaya.png"
   },
   {
+    "id": 34,
     "cuisine": "none",
     "type": "drinks",
     "name": "RedBull",
@@ -514,10 +548,11 @@
       "энергетический напиток"
     ],
     "weight": "0.25 л",
-    "price": "45 грн",
+    "price": 45,
     "photo": "../img/red-bull.png"
   },
   {
+    "id": 35,
     "cuisine": "none",
     "type": "drinks",
     "name": "Pepsi",
@@ -525,58 +560,139 @@
       "Газированный напиток"
     ],
     "weight": "0.5 л",
-    "price": "45 грн",
+    "price": 45,
     "photo": "../img/pepsi.png"
-  },{
-  "cuisine": "none",
-  "type": "drinks",
-  "name": "7up",
-  "ingredients": [
-    "Газированный напиток"
-  ],
-  "weight": "0.5 л",
-  "price": "45 грн",
-  "photo": "../img/7up.png"
-},{
-  "cuisine": "none",
-  "type": "drinks",
-  "name": "Staropramen",
-  "ingredients": [
-    "Пиво"
-  ],
-  "weight": "0.5 л",
-  "price": "45 грн",
-  "photo": "../img/staropramen.png"
-},{
-  "cuisine": "none",
-  "type": "drinks",
-  "name": "Beck's",
-  "ingredients": [
-    "Пиво"
-  ],
-  "weight": "0.5 л",
-  "price": "45 грн",
-  "photo": "../img/pivo-beks.png"
-},{
-  "cuisine": "none",
-  "type": "drinks",
-  "name": "Beck's",
-  "ingredients": [
-    "Пиво"
-  ],
-  "weight": "0.5 л",
-  "price": "45 грн",
-  "photo": "../img/pivo-beks.png"
-}
-,{
-  "cuisine": "none",
-  "type": "drinks",
-  "name": "Corona",
-  "ingredients": [
-    "Пиво"
-  ],
-  "weight": "0.5 л",
-  "price": "55 грн",
-  "photo": "../img/corona.png"
-}
+  },
+  {
+    "id": 36,
+    "cuisine": "none",
+    "type": "drinks",
+    "name": "7up",
+    "ingredients": [
+      "Газированный напиток"
+    ],
+    "weight": "0.5 л",
+    "price": 45,
+    "photo": "../img/7up.png"
+  },
+  {
+    "id": 37,
+    "cuisine": "none",
+    "type": "drinks",
+    "name": "Staropramen",
+    "ingredients": [
+      "Пиво"
+    ],
+    "weight": "0.5 л",
+    "price": 45,
+    "photo": "../img/staropramen.png"
+  },
+  {
+    "id": 38,
+    "cuisine": "none",
+    "type": "drinks",
+    "name": "Beck's",
+    "ingredients": [
+      "Пиво"
+    ],
+    "weight": "0.5 л",
+    "price": 45,
+    "photo": "../img/pivo-beks.png"
+  },
+  {
+    "id": 39,
+    "cuisine": "none",
+    "type": "drinks",
+    "name": "Corona",
+    "ingredients": [
+      "Пиво"
+    ],
+    "weight": "0.5 л",
+    "price": 55,
+    "photo": "../img/corona.png"
+  },
+  {
+    "id": 40,
+    "cuisine": "none",
+    "type": "business-lunch",
+    "name": "Азиатский понедельник",
+    "items": [
+      "Кайсо",
+      "Унаги-янагава",
+      "Курица терияки"
+    ],
+    "weight": "none",
+    "price": 125,
+    "photo": "../img/asian-monday.png"
+  },
+  {
+    "id": 41,
+    "cuisine": "none",
+    "type": "business-lunch",
+    "name": "Вкусный вторник",
+    "items": [
+      "Моцарелла с рукколой",
+      "Суп гороховый",
+      "Плов по‑японски"
+    ],
+    "weight": "none",
+    "price": 125,
+    "photo": "../img/mix-tuesday.png"
+  },
+  {
+    "id": 42,
+    "cuisine": "none",
+    "type": "business-lunch",
+    "name": "Украинская среда",
+    "items": [
+      "Киевский салат",
+      "Борщ",
+      "Деруны с творогом"
+    ],
+    "weight": "none",
+    "price": 125,
+    "photo": "../img/ukrainian-wednesday.png"
+  },
+  {
+    "id": 43,
+    "cuisine": "none",
+    "type": "business-lunch",
+    "name": "Освежающий четверг",
+    "items": [
+      "Овощной салат",
+      "Окрошка",
+      "Пад-тай с лаймом"
+    ],
+    "weight": "none",
+    "price": 125,
+    "photo": "../img/mix-thursday.png"
+  },
+  {
+    "id": 44,
+    "cuisine": "none",
+    "type": "business-lunch",
+    "name": "Итальяская пятница",
+    "items": [
+      "Салат из помидоров черри",
+      "Сырный крем-суп",
+      "Феттучини"
+    ],
+    "weight": "none",
+    "price": 125,
+    "photo": "../img/italian-friday.png"
+  },
+  {
+    "id": 45,
+    "cuisine": "none",
+    "type": "business-lunch",
+    "name": "Мясная суббота",
+    "items": [
+      "Холодный салат с говядины",
+      "Рамен с утиной грудкой",
+      "Вареники с мясом"
+    ],
+    "weight": "none",
+    "price": 125,
+    "photo": "../img/meet_saturday.png"
+  }
 ]
