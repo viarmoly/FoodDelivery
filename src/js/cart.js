@@ -1,8 +1,12 @@
 import {CART} from './store.js'
+import {showForm} from "./form";
 
 window.onload = function () {
     CART.init();
     showCart();
+    document.getElementById('order-form').innerHTML = `
+${showForm()}
+`;
 };
 
 function showCart() {
