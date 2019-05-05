@@ -9,12 +9,12 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.container{
+.container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.header{
+.header {
   z-index: 10001;
   position: fixed;
   background: #000;
@@ -43,8 +43,11 @@ nav {
 }
 
 .logo:hover {
-  background-color: black;
-  color: white;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  font-weight: bold;
 }
 
 nav:after {
@@ -54,7 +57,6 @@ nav:after {
 }
 
 nav ul {
-  float: right;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -67,7 +69,6 @@ nav ul li {
   display: inline-block;
   float: left;
   background-color: #000;
-  //border-left: 1px solid white;
 }
 
 nav ul li ul li {
@@ -78,34 +79,22 @@ nav ul li ul li {
   border-bottom: 1px solid lightgray;
 }
 
+nav ul li ul li:hover {
+  text-align: center;
+  font-weight: bold;
+}
+
 nav ul li ul li a {
   padding: 14px 20px;
   color: #000000;
 }
 
-
 nav a {
   display: block;
-  padding: 19px 25px;
+  padding: 19px 20px;
   color: #FFF;
   font-size: 17px;
   text-decoration: none;
-}
-
-nav ul li ul li:hover {
-  background: lightgray;
-}
-
-nav a:hover {
-  background-color: #d3d3d3;
-  color: #000;
-  font-weight: 700;
-  text-align: center;
-}
-
-nav ul li a:hover {
-  background-color: black;
-  color: white;
 }
 
 nav ul ul {
@@ -115,13 +104,12 @@ nav ul ul {
   z-index: 1000;
 }
 
-
 nav ul li:hover > ul {
   display: inherit;
 }
 
 nav ul ul li {
-  width: 170px;
+  width: 200px;
   float: none;
   display: list-item;
   position: relative;
@@ -134,24 +122,77 @@ nav ul ul ul li {
 }
 
 li > a:after {
-  content: ' +';
+  content: '';
 }
 
 li > a:only-child:after {
   content: '';
 }
 
+.header-cart {
+  margin: 0 20px;
+}
 
-//nav ul li:last-child{
-//  //border-right: 1px solid white;
-//  margin-right: 30px;
-//}
+.header-cart a {
+  display: block;
+  padding: 0;
+  width: 100%;
+  float: none;
+  height: 0;
+  position: relative;
+  top: 15px;
+  font-size: 28px;
+}
 
+.header-cart-items {
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  background: #fc4e4e;
+  color: #fff;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: block;
+  top: 0;
+  right: 70px;
+  padding: 1px;
+  font-weight: bold;
+}
+
+.header-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-cart-price {
+  font-size: 15px;
+  float: right;
+  line-height: 42px;
+  margin: 0 auto;
+  font-weight: bold;
+  color: lightgrey;
+  width: 67px;
+  height: 40px;
+  text-align: center;
+  padding-left: 10px;
+}
+
+.triangle i {
+  position: relative;
+  top: -2px;
+  right: -2px;
+}
 
 /* Media Queries
 --------------------------------------------- */
 
 @media only screen and (max-width: 768px) {
+
+  .header-links {
+    display: block;
+  }
 
   .logo {
     display: block;
@@ -162,8 +203,13 @@ li > a:only-child:after {
     height: 5px;
   }
 
-  .logo:hover {
-    text-align: center;
+  nav ul li ul li:hover {
+    text-align: left;
+    font-weight: normal;
+  }
+
+  .menu a:hover {
+    font-weight: normal;
   }
 
   nav {
@@ -186,11 +232,13 @@ li > a:only-child:after {
     text-align: right;
     float: none;
     height: 0;
-    position: relative;
-    top: -50px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
   }
 
-  .header-cart a hover{
+  .header-cart a hover {
     color: white;
     text-align: right;
   }
@@ -260,25 +308,6 @@ li > a:only-child:after {
   nav ul ul ul li {
     position: static;
   }
-  nav a:hover {
-    text-align: left;
-    background-color: white;
-  }
-
-  nav ul li a:hover {
-    background-color: transparent;
-    color: white;
-    font-weight: normal;
-  }
-  nav ul li ul li a:hover {
-    background-color: white;
-    color: #000000;
-  }
-
-  nav ul li ul li:hover {
-    background-color: white;
-  }
-
 
   nav ul li ul li {
     border-left: none;
@@ -290,11 +319,27 @@ li > a:only-child:after {
     color: #000;
   }
 
-  .header{
+  .header {
     overflow-y: auto;
     max-height: 100%;
     overflow-x: hidden;
+  }
 
+}
+
+@media only screen and (max-width: 550px) {
+
+  .header-cart a {
+    margin-right: 10px;
+  }
+
+  .header-cart-items {
+    position: absolute;
+    right: -7px;
+  }
+
+  .header-cart-price {
+    display: none;
   }
 
 }
