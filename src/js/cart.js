@@ -1,12 +1,8 @@
 import {CART} from './store.js'
-import {showForm} from "./form";
 
 window.onload = function () {
     CART.init();
     showCart();
-    document.getElementById('order-form').innerHTML = `
-${showForm()}
-`;
 };
 
 function showCart() {
@@ -96,6 +92,16 @@ function showCart() {
     finalSum.appendChild(fullSum);
     cartSection.appendChild(cartFooter);
 
+    let divBtn = document.createElement('div');
+    divBtn.className = 'cart-sub-btn';
+    let orderButton = document.createElement('a');
+    orderButton.className = 'cart-sub-btn';
+    orderButton.textContent = 'Оформить заказ';
+orderButton.addEventListener('click', disableCartBtn);
+    orderButton.href = './form.html';
+    divBtn.appendChild(orderButton);
+
+    cartSection.appendChild(divBtn);
 }
 
 function incrementCart(ev) {
@@ -162,10 +168,17 @@ function showItems(ev) {
     let itemQty = 0;
     products.map(item => itemQty += item.qty);
     let controls = ev.target.parentElement.parentElement.parentElement;
-    let price = controls.querySelector('div.card-footer-container span');
-    price.textContent = `В корзине ${itemQty} товаров`;
+    let item = controls.querySelector('div.card-footer-container span');
+    item.textContent = `В корзине ${itemQty} товаров`;
 }
 
+//
+function disableCartBtn(ev){
+    let products = CART.sort('qty');
+    if (products.length === 0){
+        ev.preventDefault();
+    }
+}
 export {showCart}
 
 

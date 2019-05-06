@@ -2,10 +2,9 @@ require("@babel/polyfill");
 import {PRODUCTS} from "./displayData";
 
 const CART = {
-    KEY: 'bkasjbdfkjasdkfjhaksdfjskd',
+    KEY: 'cartItems',
     contents: [],
     init() {
-        //check localStorage and initialize the contents of CART.contents
         let _contents = localStorage.getItem(CART.KEY);
         if (_contents) {
             CART.contents = JSON.parse(_contents);
@@ -16,25 +15,24 @@ const CART = {
         await localStorage.setItem(CART.KEY, _cart);
     },
     find(id) {
-        //find an item in the cart by it's id
         let match = CART.contents.filter(item => {
-            if (item.id == id)
+            if (item.id === id)
                 return true;
         });
         if (match && match[0])
             return match[0];
     },
     add(id) {
-        //add a new item to the cart
-        //check that it is not in the cart already
         if (CART.find(id)) {
             CART.increase(id, 1);
         } else {
             let arr = PRODUCTS.filter(product => {
-                if (product.id == id) {
+                if (product.id === id) {
                     return true;
                 }
             });
+            console.log(arr);
+            console.log(arr[0]);
             if (arr && arr[0]) {
 
                 let obj = {
@@ -45,26 +43,21 @@ const CART = {
                     itemImg: arr[0].photo
                 };
                 CART.contents.push(obj);
-                //update localStorage
                 CART.sync();
             } else {
-                //product id does not exist in products data
                 console.error('Invalid Product');
             }
         }
     },
     increase(id, qty = 1) {
-        //increase the quantity of an item in the cart
         CART.contents = CART.contents.map(item => {
             if (item.id === id)
                 item.qty = item.qty + qty;
             return item;
         });
-        //update localStorage
         CART.sync()
     },
     reduce(id, qty = 1) {
-        //reduce the quantity of an item in the cart
         CART.contents = CART.contents.map(item => {
             if (item.id === id)
                 item.qty = item.qty - qty;
@@ -74,28 +67,21 @@ const CART = {
             if (item.id === id && item.qty === 0)
                 await CART.remove(id);
         });
-        //update localStorage
         CART.sync()
     },
     remove(id) {
-        //remove an item entirely from CART.contents based on its id
         CART.contents = CART.contents.filter(item => {
             if (item.id !== id) {
                 return true;
             }
         });
-        //update localStorage
         CART.sync()
     },
     empty() {
-        //empty whole cart
         CART.contents = [];
-        //update localStorage
         CART.sync()
     },
     sort(field = 'title') {
-        //sort by field - title, price
-        //return a sorted shallow copy of the CART.contents array
         let sorted = CART.contents.sort((a, b) => {
             if (a[field] > b[field]) {
                 return 1;
@@ -106,11 +92,40 @@ const CART = {
             }
         });
         return sorted;
-        //NO impact on localStorage
     },
     logContents(prefix) {
         console.log(prefix, CART.contents)
     }
 };
 
-export {CART};
+const singleItem = {
+    key: 'singleItems',
+    content: [],
+    init() {
+        let _contents = localStorage.getItem(singleItem.key);
+        if (_contents) {
+            CART.content = JSON.parse(_contents);
+        }
+    },
+    async sync() {
+        let _cart = JSON.stringify(singleItem.content);
+        await localStorage.setItem(singleItem.key, _cart);
+    },
+    add(id) {
+        let arr = PRODUCTS.filter(product => {
+            if (product.id === id) {
+                return true;
+            }
+        });
+        if (arr && arr[0]) {
+            let obj = {
+                id: arr[0].id,
+            };
+            singleItem.content.push(obj);
+            singleItem.sync();
+        }
+    },
+
+};
+
+export {CART, singleItem}

@@ -1,10 +1,13 @@
-import {CART} from './store.js'
+import {CART,singleItem} from './store.js';
+import {incrementHeaderData} from './header.js';
+import {showHeader} from "./header";
+
 
 require("@babel/polyfill");
 
 export const PRODUCTS = [];
 
-function sendAjaxRequest(method, url) {
+export function sendAjaxRequest(method, url) {
     return new Promise(function (resolve, reject) {
         const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -25,7 +28,15 @@ function addItem(ev) {
     ev.preventDefault();
     let id = parseInt(ev.target.getAttribute('data-id'));
     console.log('add to cart item', id);
-    CART.add(id, 1)
+    CART.add(id, 1);
+    incrementHeaderData();
+}
+
+function sendItem(ev) {
+    ev.preventDefault();
+    let id = parseInt(ev.target.parentNode.getAttribute('prod-id'));
+    singleItem.add(id);
+    window.open("http://localhost:3000/singleProduct.html","_self")
 }
 
 function displayItems(item) {
@@ -42,11 +53,18 @@ function displayItems(item) {
     let card = document.createElement('div');
     card.className = 'menu-item';
 
+    let singleProductLink = document.createElement('a');
+    singleProductLink.href = './singleProduct.html';
+    singleProductLink.setAttribute('prod-id', item.id);
+    singleProductLink.addEventListener('click',sendItem);
+
     let img = document.createElement('img');
     img.alt = item.name;
     img.src = item.photo;
     img.className = 'menu-item-photo';
-    card.appendChild(img);
+    singleProductLink.appendChild(img);
+
+    card.appendChild(singleProductLink);
 
     let content = document.createElement('div');
     content.className = 'sm-div';
@@ -121,6 +139,9 @@ function displayLunchItems(item) {
 
 window.onload = async function () {
     CART.init();
+    document.getElementById('header').innerHTML = `
+${showHeader()}
+`;
     try {
         let data = await sendAjaxRequest('GET', './data/db.json');
         const items = JSON.parse(data);

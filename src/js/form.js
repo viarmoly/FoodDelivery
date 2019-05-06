@@ -1,9 +1,14 @@
+import {CART} from "./store";
 
 window.onload = function () {
+    document.getElementById('order-form').innerHTML = `
+${showForm()}
+`;
     document.getElementById('phone').addEventListener('input',phoneMask);
+    document.getElementById('submit-btn').addEventListener('click',postOrder);
 };
 
-export function showForm() {
+function showForm() {
     return `
     <div class="form-container">
     <form method="post" action="action.php" class="form">
@@ -43,7 +48,17 @@ export function showForm() {
 
             <label for="message" class="form-label">Коментарий</label>
             <textarea id="message" name="message" class="form__textarea"></textarea>
-            <input id="submit-btn" type="submit" value="Send Message" class="form-sub-btn"/>
+            <button id="submit-btn" type="submit" value="send_order" class="form-sub-btn">Оформить заказ</button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2 style="margin-top:20px">Спасибо за заказ!<br>
+                        Наш менеджер свяжется с Вами в ближайшее время!
+                        </h2>
+                    </div>
+                </div>
+            </div>
     </form>
     </div>
 `
@@ -54,4 +69,20 @@ function phoneMask(ev) {
     ev.target.value = x[0].length === 0 ? '' : !x[2] ? '(' + x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
 }
 
-
+function postOrder(ev){
+    ev.preventDefault();
+    CART.empty();
+    let modal = document.getElementById('myModal');
+    let span = document.getElementsByClassName("close")[0];
+    modal.style.display = "block";
+    span.addEventListener('click', function(){
+        modal.style.display = "none";
+        return window.open("http://localhost:3000","_self")
+    });
+    window.addEventListener('click', function(ev){
+        if (ev.target === modal) {
+            modal.style.display = "none";
+            return window.open("http://localhost:3000","_self")
+        }
+    })
+}

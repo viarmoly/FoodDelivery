@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/main.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head>
-<body class="body-form">
-<header class="header">
+import {CART} from './store.js'
+
+window.onload = function () {
+    CART.init();
+    document.getElementById('header').innerHTML = `
+${showHeader()}
+`;
+};
+
+
+export function showHeader(){
+    let products = CART.sort('qty');
+    let money = 0;
+    let itemQty = 0;
+    if(products.length>=1){
+        products.map(item => money += item.itemPrice * item.qty);
+        products.map(item => itemQty += item.qty);
+    }
+    return `
     <nav class="container">
         <div id="logo"><a class="logo" href="./index.html">FoodHub</a></div>
         <div class="header-links">
@@ -48,31 +55,28 @@
                 <li><a href="./business_lunch.html">Бизнес ланч</a></li>
                 <li><a href="./contacts.html">Контакты</a></li>
             </ul>
+            <div id="header-cart" class="header-cart">
+                <a href="./cart.html">
+                    <i class="fas fa-1x fa-shopping-basket"></i>
+                    <span class="header-cart-items">${itemQty}</span>
+                    <span class="header-cart-price">${money} грн</span>
+                </a>
+            </div>
         </div>
     </nav>
-</header>
+    `
+}
 
+export function incrementHeaderData() {
+    let products = CART.sort('qty');
+    let money = 0;
+    let itemQty = 0;
+    products.map(item => money += item.itemPrice * item.qty);
+    products.map(item => itemQty += item.qty);
+    let controls = document.getElementById('header-cart');
+    let price = controls.querySelector('a span.header-cart-price');
+    let item = controls.querySelector('a span.header-cart-items');
+    price.textContent = `${money} грн`;
+    item.textContent = `${itemQty}`;
+}
 
-<main style="margin-top: 70px">
-    <section class="cart-page">
-        <div class="cart-container">
-            <h1>Оформить заказ</h1>
-            <div class="cart-content">
-                <div class="cart-list-header">
-                    <div class="cart-list-title">Название</div>
-                    <div class="cart-list-price">Цена</div>
-                    <div class="cart-list-amount">Количество</div>
-                    <div class="cart-list-sum">Всего</div>
-                </div>
-                <div id="cart"></div>
-            </div>
-            <div id="order-form" ></div>
-        </div>
-    </section>
-
-</main>
-
-</div>
-</body>
-<script src="../js/cart.min.js"></script>
-</html>
