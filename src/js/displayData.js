@@ -1,6 +1,7 @@
 import {CART,singleItem} from './store.js';
 import {incrementHeaderData} from './header.js';
 import {showHeader} from "./header";
+import {pagination} from "./pagination";
 
 
 require("@babel/polyfill");
@@ -148,6 +149,9 @@ ${showHeader()}
         PRODUCTS.push(...items);
         const container = document.createElement('div');
         container.classList.add('container-menu-item');
+        container.setAttribute('id','container');
+        const paginationContainer = document.createElement('div');
+        paginationContainer.setAttribute('id','pagination');
         const saladRoot = document.getElementById('salads');
         const soupRoot = document.getElementById('soups');
         const hotmealsRoot = document.getElementById('hotmeals');
@@ -163,6 +167,7 @@ ${showHeader()}
                 }
                 if (saladRoot && item.type === "salad") {
                     const saladSection = displayItems(item);
+                    console.log(container);
                     container.append(saladSection);
                 }
                 if (hotmealsRoot && item.type === "hotmeals") {
@@ -191,15 +196,32 @@ ${showHeader()}
                 }
             }
         );
-        saladRoot && saladRoot.append(container);
-        soupRoot && soupRoot.append(container);
-        hotmealsRoot && hotmealsRoot.append(container);
-        drinksRoot && drinksRoot.append(container);
-        ukrFoodRoot && ukrFoodRoot.append(container);
-        itaFoodRoot && itaFoodRoot.append(container);
-        asiaFoodRoot && asiaFoodRoot.append(container);
-        businessLunchRoot && businessLunchRoot.append(container);
 
+
+        saladRoot && saladRoot.append(container);
+        saladRoot && saladRoot.append(paginationContainer);
+
+        soupRoot && soupRoot.append(container);
+        soupRoot && soupRoot.append(paginationContainer);
+
+        hotmealsRoot && hotmealsRoot.append(container);
+        hotmealsRoot && hotmealsRoot.append(paginationContainer);
+
+        drinksRoot && drinksRoot.append(container);
+        drinksRoot && drinksRoot.append(paginationContainer);
+
+        ukrFoodRoot && ukrFoodRoot.append(container);
+        ukrFoodRoot && ukrFoodRoot.append(paginationContainer);
+
+        itaFoodRoot && itaFoodRoot.append(container);
+        itaFoodRoot && itaFoodRoot.append(paginationContainer);
+
+        asiaFoodRoot && asiaFoodRoot.append(container);
+        asiaFoodRoot && asiaFoodRoot.append(paginationContainer);
+
+        businessLunchRoot && businessLunchRoot.append(container);
+        businessLunchRoot && businessLunchRoot.append(paginationContainer);
+        pagination.load();
     } catch (reqStatus) {
         console.log(reqStatus);
     }
