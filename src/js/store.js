@@ -111,21 +111,11 @@ const singleItem = {
         let _cart = JSON.stringify(singleItem.content);
         await localStorage.setItem(singleItem.key, _cart);
     },
-    add(id) {
-        let arr = PRODUCTS.filter(product => {
-            if (product.id === id) {
-                return true;
-            }
-        });
-        if (arr && arr[0]) {
-            let obj = {
-                id: arr[0].id,
-            };
-            singleItem.content.push(obj);
-            singleItem.sync();
-        }
+    add(arr) {
+        singleItem.content =[];
+        singleItem.content = arr;
+        singleItem.sync();
     },
-
 };
 
 export {CART, singleItem}

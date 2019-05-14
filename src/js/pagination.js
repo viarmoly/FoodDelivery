@@ -7,9 +7,17 @@ export const pagination = {
     numberPerPage: 3,
     numberOfPages: 1,
 
+    getScreenWidth(){
+      if(window.innerWidth <= 1080){
+          console.log(window.innerWidth);
+          this.numberPerPage = 4;
+      }
+    },
+
     getNumberOfPages() {
         return Math.ceil(pagination.list.length / pagination.numberPerPage);
     },
+
     makeContentList() {
         let itemsQty = document.getElementById('container');
         let items = itemsQty.children;
@@ -23,6 +31,7 @@ export const pagination = {
         this.pageList = this.list.slice(begin, end);
         pagination.drawList();
     },
+
     drawList() {
         document.getElementById('container').innerHTML = '';
         let container = document.getElementById('container');
@@ -44,6 +53,7 @@ export const pagination = {
         this.paginationList = [...pageConatiner.children];
         return this.paginationList;
     },
+
     paginationCut() {
         if (this.currentPage <= 6) {
             this.qtyPagList = this.paginationList.slice(0, 10);
@@ -94,12 +104,17 @@ export const pagination = {
         last.addEventListener('click', lastPage);
         pagination.appendChild(last);
     },
+
     toggleClass() {
         this.paginationList.forEach(item => item.classList.remove('current'));
         this.qtyPagList.forEach(item => item.classList.remove('current'));
         if (this.currentPage) {
             this.paginationList[this.currentPage - 1].className = "current";
         }
+    },
+    remove(){
+        let pagination = document.getElementById('pagination');
+        document.getElementById('pagination').innerHTML = '';
     },
 
     loadEvents() {
@@ -108,11 +123,14 @@ export const pagination = {
         pagination.loadContentList();
     },
     load() {
+        pagination.getScreenWidth();
         pagination.makeContentList();
+        this.currentPage = 1;
         this.numberOfPages = pagination.getNumberOfPages();
         pagination.makePaginationList();
         pagination.paginationCut();
         pagination.loadContentList();
+
         pagination.drawList();
     }
 };
@@ -123,6 +141,7 @@ function currentPageNumber(ev) {
     if (position !== pagination.currentPage) {
         pagination.currentPage = position;
         pagination.loadEvents();
+        window.scrollTo(0, 0);
     }
 }
 
@@ -130,6 +149,7 @@ function nextPage(ev) {
     if (pagination.currentPage !== pagination.numberOfPages) {
         pagination.currentPage += 1;
         pagination.loadEvents();
+        window.scrollTo(0, 0);
     } else {
         ev.preventDefault()
     }
@@ -140,6 +160,7 @@ function previousPage(ev) {
     if (pagination.currentPage !== 1) {
         pagination.currentPage -= 1;
         pagination.loadEvents();
+        window.scrollTo(0, 0);
     } else {
         ev.preventDefault();
     }
@@ -150,6 +171,7 @@ function firstPage(ev) {
     if (pagination.currentPage !== 1) {
         pagination.currentPage = 1;
         pagination.loadEvents();
+        window.scrollTo(0, 0);
     }
 }
 
@@ -158,5 +180,6 @@ function lastPage(ev) {
     if (pagination.currentPage !== pagination.numberOfPages) {
         pagination.currentPage = pagination.numberOfPages;
         pagination.loadEvents();
+        window.scrollTo(0, 0);
     }
 }

@@ -1,0 +1,127 @@
+main{margin-top: 56px}
+.contact-page {
+  padding: 20px 0;
+  background: #f4f4f4;
+}
+
+.contact-container {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.contact-container h1 {
+  font-size: 36px;
+  line-height: 40px;
+  font-family:  sans-serif;
+  position: relative;
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+.contact-content {
+  background: #fff;
+  border: 1px solid #eee9e3;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+}
+
+.contacts{
+  padding-top: 19px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #3f9bd9;
+  display: flex;
+  justify-content: space-between;
+}
+ .contacts:first-child {
+  padding-top: 0;
+}
+.contacts:last-child {
+  border-bottom:none;
+}
+
+.left {
+  font-weight: 600;
+  color: #444d52;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.right {
+font-family: sans-serif
+}
+#map{
+  //background-image: ;
+  margin-top: 40px;
+  width: 100%;
+}
+
+#map iframe{
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 930px) {
+  main{margin-top: 56px}
+  .contact-container{
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  body{font-size: 17px;}
+  .contact-container h1{
+    margin-bottom: 10px;
+  }
+  #map iframe{
+    height: 300px;
+  }
+}
+@media only screen and (max-height: 812px) {
+
+  #map iframe{
+    height: 400px;
+  }
+}
+
+@media only screen and (max-height: 736px) {
+  main{margin-top: 56px}
+  #map iframe{
+    height: 350px;
+  }
+  .contact-container{
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-height: 667px) {
+  #map iframe{
+    height: 300px;
+  }
+  .contact-container{
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  body{font-size: 15px;}
+}
+
+
+@media only screen and (max-width: 420px) {
+  body{font-size: 13px;}
+}
+
+
+@media only screen and (max-width: 320px) {
+  body{font-size: 13px;}
+  .contact-content{
+    padding: 15px;
+  }
+  #map{
+    margin-top: 15px;
+  }
+  #map iframe{
+    height: 250px;
+  }
+}

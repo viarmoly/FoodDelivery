@@ -1,3 +1,17 @@
+.cart-form-container{
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.cart-form-container h1{
+  font-size: 36px;
+  line-height: 40px;
+  font-family: sans-serif;
+  position: relative;
+  margin: 0 0 40px;
+  text-align: center;
+}
+
 .form-container{
   background: #fff;
   border: 1px solid #eee9e3;
@@ -5,7 +19,7 @@
 }
 
 .form {
-  width: 340px;
+  max-width: 340px;
   margin: 0 auto 40px;
 }
 
@@ -128,3 +142,41 @@
   width: 100%;
 }
 
+
+@media only screen and (max-width: 930px){
+  .cart-form-container{
+    margin: 0 20px;
+    max-width: 900px;
+  }
+  .form{
+    max-width: 340px;
+  }
+}
+
+@media only screen and (max-width: 420px){
+  .cart-page{
+    padding-top: 10px;
+  }
+  .cart-form-container h1{
+    margin-bottom: 10px;
+  }
+  .form{
+    max-width: 340px;
+  }
+  .cart-form-input{
+    height: 35px;
+  }
+
+  .form__textarea{
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 320px){
+  .cart-form-container h1{
+    font-size: 20px;
+  }
+  .form-container{
+    padding: 15px;
+  }
+}

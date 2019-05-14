@@ -59,7 +59,7 @@
 }
 
 .carousel{
-margin-top: 70px;
+margin-top: 56px;
 }
 
 /* The dots/bullets/indicators */
@@ -88,10 +88,67 @@ margin-top: 70px;
   to {opacity: 1}
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 475px) {
+.text{
+  color: #f0fff0;
+  font-size: 18px;
+  margin: 0 auto;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #000;
+  opacity: .6;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50%;
+  text-align: center;
+
+}
 
 }
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+@media only screen and (max-width: 320px) {
+
+  .slideshow-img{
+    height: 300px;
+  }
+  .next {
+    top:150px;
+  }
+
+  .prev{
+    top:150px;
+  }
+
+}
+
+@media only screen and (max-height: 420px) {
+  .slideshow-img{
+    height: 300px;
+  }
+  .next {
+    top:150px;
+  }
+
+  .prev{
+    top:150px;
+  }
+
+}
+
+@media only screen and (max-height: 320px) {
+  .slideshow-img{
+    height: 260px;
+  }
+  .next {
+    top:130px;
+  }
+
+  .prev{
+    top:130px;
+  }
+
 }

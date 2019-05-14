@@ -505,8 +505,8 @@
   },
   {
     "id": 31,
-    "cuisine": "none",
-    "type": "drinks",
+    "cuisine": "drinks",
+    "type": "water",
     "name": "Borjomi",
     "ingredients": [
       "Газированая минеральная вода"
@@ -517,8 +517,8 @@
   },
   {
     "id": 32,
-    "cuisine": "none",
-    "type": "drinks",
+    "cuisine": "drinks",
+    "type": "water",
     "name": "Моршинская",
     "ingredients": [
       "Газированая минеральная вода"
@@ -529,8 +529,8 @@
   },
   {
     "id": 33,
-    "cuisine": "none",
-    "type": "drinks",
+    "cuisine": "drinks",
+    "type": "water",
     "name": "Моршинская",
     "ingredients": [
       "Негазированая минеральная вода"
@@ -541,8 +541,8 @@
   },
   {
     "id": 34,
-    "cuisine": "none",
-    "type": "drinks",
+    "cuisine": "drinks",
+    "type": "energy",
     "name": "RedBull",
     "ingredients": [
       "энергетический напиток"
@@ -553,8 +553,8 @@
   },
   {
     "id": 35,
-    "cuisine": "none",
-    "type": "drinks",
+    "cuisine": "drinks",
+    "type": "sweet",
     "name": "Pepsi",
     "ingredients": [
       "Газированный напиток"
@@ -565,8 +565,8 @@
   },
   {
     "id": 36,
-    "cuisine": "none",
-    "type": "drinks",
+    "cuisine": "drinks",
+    "type": "sweet",
     "name": "7up",
     "ingredients": [
       "Газированный напиток"
@@ -577,8 +577,8 @@
   },
   {
     "id": 37,
-    "cuisine": "none",
-    "type": "drinks",
+    "cuisine": "drinks",
+    "type": "alcohol",
     "name": "Staropramen",
     "ingredients": [
       "Пиво"
@@ -589,8 +589,8 @@
   },
   {
     "id": 38,
-    "cuisine": "none",
-    "type": "drinks",
+    "cuisine": "drinks",
+    "type": "alcohol",
     "name": "Beck's",
     "ingredients": [
       "Пиво"
@@ -601,8 +601,8 @@
   },
   {
     "id": 39,
-    "cuisine": "none",
-    "type": "drinks",
+    "cuisine": "drinks",
+    "type": "alcohol",
     "name": "Corona",
     "ingredients": [
       "Пиво"
