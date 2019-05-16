@@ -7,15 +7,23 @@ export const pagination = {
     numberPerPage: 3,
     numberOfPages: 1,
 
-    getScreenWidth(){
-      if(window.innerWidth <= 1080){
-          console.log(window.innerWidth);
-          this.numberPerPage = 4;
-      }
+    getScreenWidth() {
+        if (window.innerWidth <= 1080) {
+            console.log(window.innerWidth);
+            this.numberPerPage = 4;
+        }
     },
+
 
     getNumberOfPages() {
         return Math.ceil(pagination.list.length / pagination.numberPerPage);
+    },
+
+    paginationCheck() {
+        if (this.numberOfPages <= 1) {
+            console.log('what?' + this.numberOfPages)
+            pagination.remove();
+        }
     },
 
     makeContentList() {
@@ -112,7 +120,7 @@ export const pagination = {
             this.paginationList[this.currentPage - 1].className = "current";
         }
     },
-    remove(){
+    remove() {
         let pagination = document.getElementById('pagination');
         document.getElementById('pagination').innerHTML = '';
     },
@@ -130,8 +138,8 @@ export const pagination = {
         pagination.makePaginationList();
         pagination.paginationCut();
         pagination.loadContentList();
-
         pagination.drawList();
+        pagination.paginationCheck()
     }
 };
 

@@ -91,21 +91,26 @@ function showSlides(n) {
 }
 
 export function carouselOnload(){
-    document.getElementById('carousel').innerHTML = `${drawCarousel()}`;
-    carousel();
-    showSlides(slideIndex);
+    let carouselId = document.getElementById('carousel');
+    if(carouselId){
+        carouselId.innerHTML = `${drawCarousel()}`;
+        carousel();
+        showSlides(slideIndex);
 
-    Array.from(document.querySelectorAll('a.next')).forEach(cls => {
-        cls.addEventListener('click', function () {
-            console.log('work')
-            showSlides(slideIndex += 1);
+        Array.from(document.querySelectorAll('a.next')).forEach(cls => {
+            cls.addEventListener('click', function () {
+                showSlides(slideIndex += 1);
+            });
         });
-    });
 
-    Array.from(document.querySelectorAll('a.prev')).forEach(cls => {
-        cls.addEventListener('click', function () {
-            showSlides(slideIndex += -1);
+        Array.from(document.querySelectorAll('a.prev')).forEach(cls => {
+            cls.addEventListener('click', function () {
+                showSlides(slideIndex += -1);
+            });
         });
-    });
+    }
+
 }
+
+
 

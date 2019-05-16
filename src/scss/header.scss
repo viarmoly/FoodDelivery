@@ -45,8 +45,9 @@ nav {
   font-weight: bold;
 }
 
-.menu a:hover {
-  font-weight: bold;
+
+.menu a:hover{
+  text-shadow: 0 0 .01px white, 0 0 .01px white, 0 0 .01px white, 0 0 .01px white;
 }
 
 nav:after {
@@ -66,7 +67,7 @@ nav ul {
 nav ul li {
   margin: 0;
   display: inline-block;
-  float: left;
+  float: none;
   background-color: #000;
 }
 

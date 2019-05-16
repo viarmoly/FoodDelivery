@@ -55,8 +55,8 @@ function buildJson () {
 
 }
 function fonts () {											//Copy fonts to dir "dev"
-    return gulp.src(fontsFiles)
-        .pipe(gulp.dest('./dist/fonts'))
+    return gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/*')
+        .pipe(gulp.dest('./dist/webfonts'))
 }
 
 // function scripts () {

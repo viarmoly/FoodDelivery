@@ -50,6 +50,19 @@ select#filter, select#sort {
   outline: none;
 }
 
+@media only screen and (max-width: 940px) {
+  .products-filters{
+    padding: 0 10px;
+  }
+  .sort-filter, .product-filter{
+    font-size: 15px;
+  }
+
+  select#filter, select#sort{
+    margin: 10px 5px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   #filters{
     margin-top: 60px;
